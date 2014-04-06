@@ -5,7 +5,7 @@ def rpn(str)
   }
 
   str.split.each do |x|
-    if x =~ /\d+\.?\d+?/
+    if x =~ /\d+(\.\d+)?/
       a.push x.to_f
     else
       l, r = a.pop 2
@@ -15,4 +15,4 @@ def rpn(str)
   a
 end
 
-puts rpn('10 2 + 14 - 4 + 2 ^')
+puts rpn('10.2 2 + 14 - 4 + 2 ^')
