@@ -15,4 +15,4 @@ def rpn(str)
   a
 end
 
-puts rpn('10.2 2 + 14 - 4 + 2 ^')
+puts rpn('10 2 + 14 - 4 + 2 ^ 0.2 +')
