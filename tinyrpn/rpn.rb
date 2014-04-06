@@ -6,7 +6,7 @@ def rpn(str)
 
   str.split.each do |x|
     if x =~ /\d+\.?\d+?/
-      a.push x.to_i
+      a.push x.to_f
     else
       l, r = a.pop 2
       a.push ops[x] ? ops[x].(l,r) : l.send(x,r)
