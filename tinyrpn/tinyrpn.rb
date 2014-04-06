@@ -1,0 +1,1 @@
+a=[];$*[0].split.map{|x|a<<(Float x rescue a.pop(2).reduce x)};p *a
