@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tada!</title>
+
+<script src="./tweetquery.js"></script>
+
+<script>
+// Working for document only. (What's in tweetquery.js)
+//$=function(q){return[].slice.call(q[0]!='<'?document.querySelectorAll(q):new DOMParser().parseFromString(q,'text/html').body.children)}
+
+// Attempt at making it work for arbitrary elements.
+//$=function(q,e){return[].slice.call(q[0]!='<'?(e||document).querySelectorAll(q):new DOMParser().parseFromString(q,'text/html').body.children)}
+
+</script>
+
+</head>
+<body>
+
+<script>
+
+divs = $('<div>Fuck yes!</div><div></div>');
+console.assert(divs.length == 2, 'should parse two divs');
+
+$('body')[0].appendChild(divs[0]);
+$('body')[0].appendChild(divs[1]);
+
+$('title')[0].textContent = 'Fuck yes!';
+
+console.assert($('div').length == 2, 'should pick up two divs from dom');
+console.assert($('body > div')[0].textContent == 'Fuck yes!', 'should have text "Fuck yes!"')
+console.assert($('head > title')[0].textContent == 'Fuck yes!', 'should have title "Fuck yes!"')
+
+div = $('<div><p>Bam!</p></div>')[0]
+
+// Uncomment to test using tweetquery on arbitrary elements.
+//console.assert($('p', div)[0].textContent == 'Bam!', 'should have text "Bam!"')
+
+</script>
+
+</body>
+</html>

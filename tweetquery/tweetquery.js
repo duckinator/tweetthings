@@ -1,0 +1,1 @@
+$=function(q){return[].slice.call(q[0]!='<'?document.querySelectorAll(q):new DOMParser().parseFromString(q,'text/html').body.children)}
