@@ -1,5 +1,5 @@
 ;nasm -fbin a.s;qemu-system-i386 -hdc a
-org 31744
+org 7C00h
 mov ah,14
 mov si,s
 p:lodsb
